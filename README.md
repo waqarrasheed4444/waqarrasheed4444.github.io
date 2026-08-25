@@ -16,12 +16,13 @@
     :root {
       --bg-primary: #0b0f19;
       --bg-secondary: #111827;
-      --bg-card: rgba(17, 24, 39, 0.8);
+      --bg-card: rgba(17, 24, 39, 0.85);
       --bg-glass: rgba(255, 255, 255, 0.03);
       --border-color: rgba(255, 255, 255, 0.1);
       --accent-blue: #0078d4;
       --accent-cyan: #00d2ff;
       --accent-purple: #7928ca;
+      --accent-whatsapp: #25D366;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --text-dim: #6b7280;
@@ -82,7 +83,7 @@
       z-index: 1000;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(11, 15, 25, 0.8);
+      background: rgba(11, 15, 25, 0.85);
       border-bottom: 1px solid var(--border-color);
       transition: var(--transition);
     }
@@ -95,7 +96,7 @@
     }
 
     .logo {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: #fff;
       text-decoration: none;
@@ -111,7 +112,7 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
       align-items: center;
     }
@@ -127,8 +128,17 @@
       color: var(--accent-cyan);
     }
 
+    .nav-whatsapp {
+      color: #25D366 !important;
+      font-size: 1.15rem;
+      transition: var(--transition);
+    }
+    .nav-whatsapp:hover {
+      transform: scale(1.15);
+    }
+
     .nav-cta {
-      padding: 10px 22px;
+      padding: 9px 20px;
       border-radius: var(--radius-sm);
       background: var(--gradient-accent);
       color: #fff !important;
@@ -218,24 +228,35 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      padding: 14px 28px;
+      padding: 14px 26px;
       border-radius: var(--radius-sm);
       font-size: 1rem;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
       transition: var(--transition);
+      border: none;
     }
     .btn-primary {
       background: var(--gradient-accent);
       color: #fff;
-      border: none;
       box-shadow: 0 4px 20px rgba(0, 120, 212, 0.35);
     }
     .btn-primary:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+    .btn-whatsapp:hover {
+      background: #20ba5a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
     }
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
@@ -600,36 +621,203 @@
       margin-bottom: 8px;
     }
 
-    /* Contact Section */
-    .contact-card {
-      background: linear-gradient(135deg, rgba(0, 120, 212, 0.15) 0%, rgba(121, 40, 202, 0.15) 100%);
-      border: 1px solid rgba(0, 210, 255, 0.3);
-      border-radius: var(--radius-lg);
-      padding: 60px 40px;
-      text-align: center;
-      max-width: 850px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-glow);
+    /* Interactive Contact Form Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      align-items: start;
     }
-    .contact-card h2 {
-      font-size: 2.4rem;
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-info-header h3 {
+      font-size: 1.8rem;
       font-weight: 800;
-      margin-bottom: 16px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .contact-info-header p {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .direct-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .direct-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .direct-item:hover {
+      background: rgba(0, 120, 212, 0.15);
+      border-color: var(--accent-cyan);
+      transform: translateX(5px);
+    }
+    .direct-item.whatsapp-item:hover {
+      background: rgba(37, 211, 102, 0.15);
+      border-color: #25D366;
+    }
+    .direct-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(0, 210, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--accent-cyan);
+    }
+    .direct-icon.whatsapp {
+      background: rgba(37, 211, 102, 0.15);
+      color: #25D366;
+    }
+    .direct-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .direct-value {
+      font-size: 0.95rem;
+      font-weight: 600;
       color: #fff;
     }
-    .contact-card p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 35px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-glow);
     }
-    .contact-links {
-      display: flex;
-      justify-content: center;
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
-      flex-wrap: wrap;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #d1d5db;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: var(--gradient-accent);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0, 120, 212, 0.35);
+    }
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(39, 201, 63, 0.15);
+      border: 1px solid rgba(39, 201, 63, 0.4);
+      color: #34d399;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      z-index: 999;
+      transition: var(--transition);
+      animation: pulseWhatsApp 2.5s infinite;
+    }
+    .floating-whatsapp:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.65);
+    }
+
+    @keyframes pulseWhatsApp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     /* Footer */
@@ -649,6 +837,8 @@
       .hero-actions { justify-content: center; }
       .stats-bar { grid-template-columns: 1fr 1fr; gap: 25px; }
       .about-box { grid-template-columns: 1fr; gap: 35px; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.7rem; }
     }
     @media (max-width: 768px) {
@@ -656,6 +846,7 @@
       .menu-toggle { display: block; }
       .hero-title { font-size: 2.2rem; }
       .stats-bar { grid-template-columns: 1fr; }
+      .floating-whatsapp { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -664,6 +855,11 @@
   <!-- Ambient Glow Backgrounds -->
   <div class="glow-orb glow-1"></div>
   <div class="glow-orb glow-2"></div>
+
+  <!-- Floating WhatsApp Quick-Chat Button -->
+  <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <!-- Sticky Navigation Bar -->
   <header>
@@ -678,6 +874,7 @@
           <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#projects">Projects & Domains</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="https://wa.me/923044576934" target="_blank" class="nav-whatsapp" title="Direct WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
           <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
           <li><a href="https://github.com/waqarrasheed4444" target="_blank"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
@@ -708,8 +905,8 @@
             <a href="#projects" class="btn btn-primary">
               <i class="fa-solid fa-rocket"></i> View Enterprise Projects
             </a>
-            <a href="https://github.com/waqarrasheed4444" target="_blank" class="btn btn-secondary">
-              <i class="fa-brands fa-github"></i> GitHub Profile
+            <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="btn btn-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
             </a>
           </div>
         </div>
@@ -1059,7 +1256,7 @@
           <ul class="info-list">
             <li><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</li>
             <li><i class="fa-solid fa-building"></i> Senior Full Stack Engineer @ Berks Technologies</li>
-            <li><i class="fa-solid fa-envelope"></i> Open to contracts & enterprise consulting</li>
+            <li><i class="fa-solid fa-envelope"></i> Open to enterprise consulting & contracts</li>
           </ul>
         </div>
 
@@ -1078,19 +1275,101 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Interactive Contact Form Section -->
   <section id="contact">
     <div class="container">
-      <div class="contact-card">
-        <h2>Let's Build Something Great Together</h2>
-        <p>Looking for a Senior .NET Developer to architect your Web API, build a high-performance backend, or engineer a full-stack solution? Let's connect!</p>
-        <div class="contact-links">
-          <a href="https://linkedin.com/in/waqarhussain786" target="_blank" class="btn btn-primary">
-            <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
-          </a>
-          <a href="https://github.com/waqarrasheed4444" target="_blank" class="btn btn-secondary">
-            <i class="fa-brands fa-github"></i> Explore GitHub
-          </a>
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Start a Project or Consultation</h2>
+        <p class="section-subtitle">Have an enterprise project, .NET backend requirement, or architecture consulting need? Send a message directly.</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Direct Contact Cards -->
+        <div class="contact-info-card">
+          <div class="contact-info-header">
+            <h3>Let's Connect</h3>
+            <p>I'm available for full-stack .NET contracts, architecture design, and enterprise software consulting.</p>
+          </div>
+
+          <div class="direct-links">
+            <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="direct-item whatsapp-item">
+              <div class="direct-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div class="direct-label">WhatsApp (Direct Chat)</div>
+                <div class="direct-value">+92 304 4576934</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/waqarhussain786" target="_blank" class="direct-item">
+              <div class="direct-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <div class="direct-label">LinkedIn Profile</div>
+                <div class="direct-value">in/waqarhussain786</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/waqarrasheed4444" target="_blank" class="direct-item">
+              <div class="direct-icon"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <div class="direct-label">GitHub Profile</div>
+                <div class="direct-value">waqarrasheed4444</div>
+              </div>
+            </a>
+
+            <div class="direct-item">
+              <div class="direct-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="direct-label">Location</div>
+                <div class="direct-value">Lahore, Pakistan (PKT / UTC+5)</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.88rem; color: var(--text-dim);">
+            <i class="fa-solid fa-bolt" style="color: #ffbd2e; margin-right: 6px;"></i> Average response time: Under 24 hours
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-card">
+          <form id="portfolioContactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="senderName">Your Name *</label>
+                <input type="text" id="senderName" class="form-control" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="senderEmail">Your Email *</label>
+                <input type="email" id="senderEmail" class="form-control" placeholder="john@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="projectType">Service / Project Type</label>
+              <select id="projectType" class="form-control" style="background: #1a2234;">
+                <option value="ASP.NET Core 8 Web API Backend">ASP.NET Core 8 Web API & REST Backend</option>
+                <option value="Healthcare ERP / MediCore Platform">Healthcare / Medical ERP Solution</option>
+                <option value="Full Stack Angular & .NET App">Full Stack App (Angular + .NET Core)</option>
+                <option value="SQL Server & Database Optimization">SQL Server Database & Query Tuning</option>
+                <option value="Architecture Review & Clean Code Consultation">Architecture Review & Clean Code Consultation</option>
+                <option value="Other Inquiries">Other Inquiries</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderMessage">Project Details / Message *</label>
+              <textarea id="senderMessage" class="form-control" placeholder="Tell me about your project scope, timeline, and requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="submitBtn">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+
+            <div class="form-status success" id="formStatus">
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your message has been prepared. Opening your email client to send...
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -1099,12 +1378,13 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2026 Waqar Hussain. Senior Full Stack .NET Developer. Built with passion & precision.</p>
+      <p>© 2026 Waqar Hussain. Senior Full Stack .NET Developer. Built with precision & modern web standards.</p>
     </div>
   </footer>
 
-  <!-- Simple Typing Effect Script -->
+  <!-- Interactive Scripts -->
   <script>
+    // Typing animation
     const phrases = [
       "Senior Full Stack .NET Developer",
       "ASP.NET Core 8 Web API Specialist",
@@ -1130,7 +1410,7 @@
       let typeSpeed = isDeleting ? 40 : 80;
 
       if (!isDeleting && charIndex === currentPhrase.length) {
-        typeSpeed = 1800; // Pause at end of text
+        typeSpeed = 1800;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -1139,6 +1419,33 @@
       }
 
       setTimeout(typeEffect, typeSpeed);
+    }
+
+    // Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const email = document.getElementById('senderEmail').value;
+      const type = document.getElementById('projectType').value;
+      const message = document.getElementById('senderMessage').value;
+      const statusDiv = document.getElementById('formStatus');
+      const submitBtn = document.getElementById('submitBtn');
+
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+      
+      setTimeout(() => {
+        statusDiv.style.display = 'block';
+        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
+        
+        // Trigger mailto link with prefilled details
+        const subject = encodeURIComponent(`[Project Inquiry: ${type}] from ${name}`);
+        const body = encodeURIComponent(`Hi Waqar,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${type}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:waqarhussain.dev@gmail.com?subject=${subject}&body=${body}`;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Another Message';
+        }, 3000);
+      }, 600);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
