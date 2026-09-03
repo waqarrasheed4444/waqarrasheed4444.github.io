@@ -874,8 +874,12 @@
           <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#projects">Projects & Domains</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="https://wa.me/923044576934" target="_blank" class="nav-whatsapp" title="Direct WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
-          <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+<a href="https://wa.me/923044576934"
+   target="_blank"
+   class="floating-whatsapp"
+   title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>          <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
           <li><a href="https://github.com/waqarrasheed4444" target="_blank"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
         </ul>
