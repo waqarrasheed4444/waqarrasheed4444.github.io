@@ -887,7 +887,13 @@
       </nav>
     </div>
   </header>
-
+<a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="direct-item whatsapp-item">
+              <div class="direct-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div class="direct-label">WhatsApp (Direct Chat)</div>
+                <div class="direct-value">+92 304 4576934</div>
+              </div>
+            </a>
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
