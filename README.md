@@ -1,3 +1,6 @@
+Here is the **complete, updated single-file HTML code** with your email `waqarhussain.dev12@gmail.com` updated across the site, the WhatsApp button in the navbar right beside "Get In Touch", and the full "Let's Build Something Great Together" section:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +114,7 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       list-style: none;
       align-items: center;
     }
@@ -139,7 +142,7 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
-    /* WhatsApp Button in Navigation */
+    /* WhatsApp Button in Navigation (Near Get In Touch) */
     .nav-whatsapp-btn {
       display: inline-flex !important;
       align-items: center;
@@ -148,8 +151,8 @@
       border: 1px solid rgba(37, 211, 102, 0.4);
       color: #25D366 !important;
       font-weight: 600;
-      font-size: 0.9rem;
-      padding: 8px 15px;
+      font-size: 0.88rem;
+      padding: 8px 14px;
       border-radius: var(--radius-sm);
       transition: var(--transition);
     }
@@ -634,6 +637,124 @@
       margin-bottom: 8px;
     }
 
+    /* "Let's Build Something Great Together" Banner */
+    .cta-banner-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 50px 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 0 35px rgba(0, 120, 212, 0.2);
+    }
+    .cta-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+    .cta-email-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 10px 22px;
+      border-radius: 50px;
+      margin-bottom: 30px;
+      color: #fff;
+      font-size: 0.98rem;
+    }
+    .cta-email-badge a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-email-badge a:hover {
+      text-decoration: underline;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .cta-btn-email {
+      background: var(--gradient-accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 120, 212, 0.35);
+    }
+    .cta-btn-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+    }
+    .cta-btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+    .cta-btn-whatsapp:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    .cta-btn-linkedin {
+      background: #0077B5;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .cta-btn-linkedin:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
+    }
+    .cta-btn-github {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid var(--border-color);
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .cta-btn-github:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
     /* Interactive Contact Form Section */
     .contact-wrapper {
       display: grid;
@@ -882,7 +1003,7 @@
   <div class="glow-orb glow-1"></div>
   <div class="glow-orb glow-2"></div>
 
-  <!-- Floating WhatsApp Quick-Chat Button with Inline SVG -->
+  <!-- Floating WhatsApp Quick-Chat Button -->
   <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
     <svg width="34" height="34" viewBox="0 0 24 24" fill="#ffffff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
   </a>
@@ -1325,6 +1446,51 @@
     </div>
   </section>
 
+  <!-- "Let's Build Something Great Together" Banner Section -->
+  <section id="connect-banner">
+    <div class="container">
+      <div class="cta-banner-card">
+        <h2 class="cta-title">Let's Build Something Great Together</h2>
+        <p class="cta-desc">
+          Looking for a Senior .NET Developer to architect your Web API, build a high-performance backend, or engineer a full-stack solution? Let's connect!
+        </p>
+
+        <!-- Direct Email Pill Badge -->
+        <div class="cta-email-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Direct Email: <a href="mailto:waqarhussain.dev12@gmail.com">waqarhussain.dev12@gmail.com</a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="cta-buttons">
+          <!-- Email Button -->
+          <a href="mailto:waqarhussain.dev12@gmail.com?subject=Project%20Inquiry%20from%20Portfolio" class="cta-btn-email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Send Email
+          </a>
+
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="cta-btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
+            WhatsApp
+          </a>
+
+          <!-- LinkedIn Button -->
+          <a href="https://linkedin.com/in/waqarhussain786" target="_blank" class="cta-btn-linkedin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg>
+            Connect on LinkedIn
+          </a>
+
+          <!-- GitHub Button -->
+          <a href="https://github.com/waqarrasheed4444" target="_blank" class="cta-btn-github">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            Explore GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Interactive Contact Form Section -->
   <section id="contact">
     <div class="container">
@@ -1350,6 +1516,17 @@
               <div>
                 <div class="direct-label">WhatsApp (Direct Chat)</div>
                 <div class="direct-value">+92 304 4576934</div>
+              </div>
+            </a>
+
+            <!-- Direct Email Link -->
+            <a href="mailto:waqarhussain.dev12@gmail.com?subject=Enterprise%20Consultation" class="direct-item">
+              <div class="direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div class="direct-label">Direct Email</div>
+                <div class="direct-value">waqarhussain.dev12@gmail.com</div>
               </div>
             </a>
 
@@ -1493,7 +1670,7 @@
       });
     }
 
-    // Form Submission Handler
+    // Form Submission Handler with waqarhussain.dev12@gmail.com
     function handleFormSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('senderName').value;
@@ -1509,10 +1686,10 @@
         statusDiv.style.display = 'block';
         submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
         
-        // Trigger mailto link with prefilled details
+        // Trigger mailto link to waqarhussain.dev12@gmail.com
         const subject = encodeURIComponent(`[Project Inquiry: ${type}] from ${name}`);
         const body = encodeURIComponent(`Hi Waqar,\n\nName: ${name}\nEmail: ${email}\nProject Type: ${type}\n\nMessage:\n${message}`);
-        window.location.href = `mailto:waqarhussain.dev@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:waqarhussain.dev12@gmail.com?subject=${subject}&body=${body}`;
 
         setTimeout(() => {
           submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Another Message';
@@ -1526,3 +1703,4 @@
   </script>
 </body>
 </html>
+```
