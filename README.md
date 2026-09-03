@@ -1,6 +1,3 @@
-Here is the complete, fully fixed and polished HTML file ready to use:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +27,6 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       --text-muted: #9ca3af;
       --text-dim: #6b7280;
       --gradient-accent: linear-gradient(135deg, #0078d4 0%, #00d2ff 100%);
-      --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -86,7 +82,7 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       z-index: 1000;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(11, 15, 25, 0.85);
+      background: rgba(11, 15, 25, 0.88);
       border-bottom: 1px solid var(--border-color);
       transition: var(--transition);
     }
@@ -115,7 +111,7 @@ Here is the complete, fully fixed and polished HTML file ready to use:
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       list-style: none;
       align-items: center;
     }
@@ -133,14 +129,35 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       color: var(--accent-cyan);
     }
 
-    .nav-whatsapp {
+    .social-icon-link {
+      padding: 6px;
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+    .social-icon-link:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* WhatsApp Button in Navigation */
+    .nav-whatsapp-btn {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 7px;
+      background: rgba(37, 211, 102, 0.15) !important;
+      border: 1px solid rgba(37, 211, 102, 0.4);
       color: #25D366 !important;
-      font-size: 1.25rem !important;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 15px;
+      border-radius: var(--radius-sm);
       transition: var(--transition);
     }
-    .nav-whatsapp:hover {
-      transform: scale(1.18);
-      color: #34d399 !important;
+    .nav-whatsapp-btn:hover {
+      background: #25D366 !important;
+      color: #fff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     }
 
     .nav-cta {
@@ -263,16 +280,6 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       background: #20ba5a;
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-    }
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--accent-cyan);
-      transform: translateY(-3px);
     }
 
     .hero-card-visual {
@@ -808,7 +815,6 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
       box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
       text-decoration: none;
       z-index: 999;
@@ -847,7 +853,7 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       .form-row { grid-template-columns: 1fr; }
       .hero-title { font-size: 2.7rem; }
     }
-    @media (max-width: 768px) {
+    @media (max-width: 820px) {
       .nav-links {
         display: none;
         position: absolute;
@@ -866,7 +872,7 @@ Here is the complete, fully fixed and polished HTML file ready to use:
       .menu-toggle { display: block; }
       .hero-title { font-size: 2.2rem; }
       .stats-bar { grid-template-columns: 1fr; }
-      .floating-whatsapp { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.6rem; }
+      .floating-whatsapp { bottom: 20px; right: 20px; width: 52px; height: 52px; }
     }
   </style>
 </head>
@@ -876,9 +882,9 @@ Here is the complete, fully fixed and polished HTML file ready to use:
   <div class="glow-orb glow-1"></div>
   <div class="glow-orb glow-2"></div>
 
-  <!-- Floating WhatsApp Quick-Chat Button -->
+  <!-- Floating WhatsApp Quick-Chat Button with Inline SVG -->
   <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="floating-whatsapp" title="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="#ffffff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
   </a>
 
   <!-- Sticky Navigation Bar -->
@@ -886,7 +892,7 @@ Here is the complete, fully fixed and polished HTML file ready to use:
     <div class="container">
       <nav>
         <a href="#home" class="logo">
-          <i class="fa-solid fa-code" style="color: #00d2ff;"></i>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
           <span>Waqar Hussain</span>
         </a>
         <ul class="nav-links" id="navLinks">
@@ -894,16 +900,35 @@ Here is the complete, fully fixed and polished HTML file ready to use:
           <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#projects">Projects & Domains</a></li>
           <li><a href="#experience">Experience</a></li>
+          
+          <!-- LinkedIn -->
           <li>
-            <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="nav-whatsapp" title="Chat on WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://linkedin.com/in/waqarhussain786" target="_blank" title="LinkedIn" class="social-icon-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg>
             </a>
           </li>
-          <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-          <li><a href="https://github.com/waqarrasheed4444" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+
+          <!-- GitHub -->
+          <li>
+            <a href="https://github.com/waqarrasheed4444" target="_blank" title="GitHub" class="social-icon-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            </a>
+          </li>
+
+          <!-- WhatsApp Button Directly Before 'Get In Touch' -->
+          <li>
+            <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="nav-whatsapp-btn" title="Chat on WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </li>
+
+          <!-- Get In Touch CTA -->
           <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
         </ul>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -930,7 +955,8 @@ Here is the complete, fully fixed and polished HTML file ready to use:
               <i class="fa-solid fa-rocket"></i> View Enterprise Projects
             </a>
             <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
+              <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -1318,7 +1344,9 @@ Here is the complete, fully fixed and polished HTML file ready to use:
 
           <div class="direct-links">
             <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="direct-item whatsapp-item">
-              <div class="direct-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="direct-icon whatsapp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.2-.43-.4-.44-.59-.45l-.5-.01c-.17 0-.45.07-.69.32-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.81 2.89 4.46 3.94 2.21.87 2.66.7 3.14.65.48-.04 1.55-.63 1.77-1.25.22-.61.22-1.13.15-1.25-.07-.11-.25-.18-.53-.32s-1.55-.77-1.79-.86c-.24-.09-.41-.13-.59.13-.18.26-.69.86-.84 1.04-.16.17-.32.2-.6.06-.27-.13-1.16-.43-2.2-1.36-.82-.72-1.37-1.62-1.53-1.89-.16-.27-.02-.42.12-.56.13-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.08-.14-.59-1.48-.82-2.02Z"/></svg>
+              </div>
               <div>
                 <div class="direct-label">WhatsApp (Direct Chat)</div>
                 <div class="direct-value">+92 304 4576934</div>
@@ -1326,7 +1354,9 @@ Here is the complete, fully fixed and polished HTML file ready to use:
             </a>
 
             <a href="https://linkedin.com/in/waqarhussain786" target="_blank" class="direct-item">
-              <div class="direct-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg>
+              </div>
               <div>
                 <div class="direct-label">LinkedIn Profile</div>
                 <div class="direct-value">in/waqarhussain786</div>
@@ -1334,7 +1364,9 @@ Here is the complete, fully fixed and polished HTML file ready to use:
             </a>
 
             <a href="https://github.com/waqarrasheed4444" target="_blank" class="direct-item">
-              <div class="direct-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="direct-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+              </div>
               <div>
                 <div class="direct-label">GitHub Profile</div>
                 <div class="direct-value">waqarrasheed4444</div>
@@ -1342,7 +1374,9 @@ Here is the complete, fully fixed and polished HTML file ready to use:
             </a>
 
             <div class="direct-item">
-              <div class="direct-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="direct-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
               <div>
                 <div class="direct-label">Location</div>
                 <div class="direct-value">Lahore, Pakistan (PKT / UTC+5)</div>
@@ -1492,4 +1526,3 @@ Here is the complete, fully fixed and polished HTML file ready to use:
   </script>
 </body>
 </html>
-```
