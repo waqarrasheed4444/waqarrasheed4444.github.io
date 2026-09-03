@@ -1,3 +1,6 @@
+Here is the complete, fully fixed and polished HTML file ready to use:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,6 +126,8 @@
       font-size: 0.95rem;
       font-weight: 500;
       transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
     }
     .nav-links a:hover {
       color: var(--accent-cyan);
@@ -130,11 +135,12 @@
 
     .nav-whatsapp {
       color: #25D366 !important;
-      font-size: 1.15rem;
+      font-size: 1.25rem !important;
       transition: var(--transition);
     }
     .nav-whatsapp:hover {
-      transform: scale(1.15);
+      transform: scale(1.18);
+      color: #34d399 !important;
     }
 
     .nav-cta {
@@ -842,7 +848,21 @@
       .hero-title { font-size: 2.7rem; }
     }
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 15, 25, 0.97);
+        flex-direction: column;
+        padding: 24px;
+        border-bottom: 1px solid var(--border-color);
+        gap: 18px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
       .menu-toggle { display: block; }
       .hero-title { font-size: 2.2rem; }
       .stats-bar { grid-template-columns: 1fr; }
@@ -869,31 +889,25 @@
           <i class="fa-solid fa-code" style="color: #00d2ff;"></i>
           <span>Waqar Hussain</span>
         </a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Tech Stack</a></li>
           <li><a href="#projects">Projects & Domains</a></li>
           <li><a href="#experience">Experience</a></li>
-<a href="https://wa.me/923044576934"
-   target="_blank"
-   class="floating-whatsapp"
-   title="Chat on WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>          <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-          <li><a href="https://github.com/waqarrasheed4444" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          <li>
+            <a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="nav-whatsapp" title="Chat on WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+          <li><a href="https://linkedin.com/in/waqarhussain786" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/waqarrasheed4444" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
           <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
         </ul>
-        <button class="menu-toggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
       </nav>
     </div>
   </header>
-<a href="https://wa.me/923044576934?text=Hi%20Waqar%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!" target="_blank" class="direct-item whatsapp-item">
-              <div class="direct-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
-              <div>
-                <div class="direct-label">WhatsApp (Direct Chat)</div>
-                <div class="direct-value">+92 304 4576934</div>
-              </div>
-            </a>
+
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
@@ -1431,6 +1445,20 @@
       setTimeout(typeEffect, typeSpeed);
     }
 
+    // Mobile Navbar Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+
     // Form Submission Handler
     function handleFormSubmit(e) {
       e.preventDefault();
@@ -1464,3 +1492,4 @@
   </script>
 </body>
 </html>
+```
